@@ -13,11 +13,17 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
     // Called when there's incoming data on the websocket for this channel
   },
 
-  speak: function() {
-    return this.perform('speak', {message:'aaaaaaa'});
+  speak: function(content) {
+    return this.perform('speak', {message: content});
   }
 });
 
 document.addEventListener('DOMContentLoaded', function(){
   input = document.getElementById('chat-input')
+  button = document.getElementById('button')
+  button.addEventListener('click',function(){
+    content = input.value
+    App.room.speak(content)
+    input.value = ''
+  })
 })
