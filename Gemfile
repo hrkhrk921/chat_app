@@ -61,3 +61,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #original
 gem 'pry-rails'
+gem 'bootstrap', '~> 4.2.1'
