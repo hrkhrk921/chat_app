@@ -8,9 +8,9 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-  received: function(data) {
+  received: function(message) {
     const messages = document.getElementById('messages')
-    messages.innerHTML += '<p>${data}</p>'
+    messages.innerHTML += message
     // Called when there's incoming data on the websocket for this channel
   },
 
